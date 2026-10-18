@@ -9,7 +9,6 @@ module register(IN, OUT, CLK, RST, WT);
             OUT <= 8' b0;
         else if (WT)
             OUT <= IN;
-        else
     end
 endmodule
         

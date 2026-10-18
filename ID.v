@@ -1,11 +1,8 @@
 # 8-bit input, the highest 2-bit determine the mod
-module ID(IN, OUT, active);
-    input active;
+module ID(in, opcode);
     input [7:0] IN;
-    output reg [2:0] OUT;
+    output [1:0] opcode;
 
-    always @ (posedge active)
-    begin
-        OUT = {IN[7],IN[6]};
-    end
+    assign opcode = {IN[7],IN[6]};
+
 endmodule
