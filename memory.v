@@ -1,9 +1,10 @@
-module RAM(WT, address, data_in, data_out, clk);
+module RAM(
     input WT, clk;
     input [7:0] address, data_in;
     output [7:0] data_out;
+);
 
-    reg [7:0] memory [0:255]
+    reg [7:0] memory [0:255];
 
     always @ (posedge clk)
     begin
@@ -12,5 +13,4 @@ module RAM(WT, address, data_in, data_out, clk);
     end
 
     assign data_out = memory[address];
-
 endmodule

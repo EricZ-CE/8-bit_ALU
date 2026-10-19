@@ -1,13 +1,13 @@
-module ALU (A, B, option, result, zero, active);
-    input [7:0] A, B;
-    input [2:0] option;
-    input active
-    output zero;
-    output reg [7:0] result;
+module ALU (
+    input [7:0] A, B,
+    input [2:0] option,
+    output zero,
+    output reg [7:0] result
+);
 
     always @ (*)
     begin
-        case (opcode)
+        case (option)
             3' b000: result = A + B;
             3' b001: result = A - B;
             3' b010: result = A & B;
@@ -18,5 +18,4 @@ module ALU (A, B, option, result, zero, active);
             default: result = 8' b0;
         endcase
     assign zero = (result == 8' b0);
-
 endmodule

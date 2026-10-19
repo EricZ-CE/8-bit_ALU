@@ -1,7 +1,8 @@
-module register(IN, OUT, CLK, RST, WT);
-    input [7:0] IN;
-    input CLK, RST, WT;
-    output reg [7:0] OUT;
+module register(
+    input [7:0] IN,
+    input CLK, RST, WT,
+    output reg [7:0] OUT
+);
 
     always @ (posedge CLK)
     begin
